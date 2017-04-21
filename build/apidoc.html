@@ -1,0 +1,510 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/alexandrusavin/exectimer"
+
+    >exectimer (v2.0.3)</a>
+</h1>
+<h4>Very simple module to calculate block execution time.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.exectimer">module exectimer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick">
+            function <span class="apidocSignatureSpan">exectimer.</span>Tick
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.timer">
+            function <span class="apidocSignatureSpan">exectimer.</span>timer
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">exectimer.</span>Tick.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">exectimer.</span>timers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.exectimer.Tick">module exectimer.Tick</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick.Tick">
+            function <span class="apidocSignatureSpan">exectimer.</span>Tick
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick.wrap">
+            function <span class="apidocSignatureSpan">exectimer.Tick.</span>wrap
+            <span class="apidocSignatureSpan">(name, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.exectimer.Tick.prototype">module exectimer.Tick.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick.prototype.getDiff">
+            function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>getDiff
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick.prototype.start">
+            function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.exectimer.Tick.prototype.stop">
+            function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.exectimer" id="apidoc.module.exectimer">module exectimer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick" id="apidoc.element.exectimer.Tick">
+        function <span class="apidocSignatureSpan">exectimer.</span>Tick
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tick(name) {
+    this.name = name;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ Stops the timer of this tick.
+
+###Timers
+ Array of timers. Each timer has methods to calculate the various metrics. When a tick is created, it is pushed into the
+ timer with name that was passed to the ticker in the constructor.
+
+```
+var tick = new t.<span class="apidocCodeKeywordSpan">Tick</span>(&#x22;TIMER&#x22;);
+
+tick.start();
+// Do some processing
+tick.stop();
+
+var myTimer = t.timers.TIMER;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.timer" id="apidoc.element.exectimer.timer">
+        function <span class="apidocSignatureSpan">exectimer.</span>timer
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timer = function (name) {
+    if (typeof timers[name] === &#x27;undefined&#x27;) {
+        timers[name] = {
+            ticks: [],
+
+<span class="apidocCodeCommentSpan">            /**
+             * Get the median of all ticks.
+             * @returns {*}
+             */
+</span>            median: function () {
+                if (this.ticks.length &#x3e; 1) {
+                    const sorted = this.ticks.slice(0).sort(function (a, b) {
+                        return a &#x26;&#x26; b &#x26;&#x26; (a.getDiff() - b.getDiff()) || 0;
+                    });
+
+                    const l = sorted.length;
+                    const half = Math.floor(l / 2);
+
+
+                    if (l % 2) {
+                        return sorted[half].getDiff();
+                    } else {
+                        return (sorted[half - 1].getDiff() + sorted[half].getDiff()) / 2;
+                    }
+                } else {
+                    return this.ticks[0].getDiff();
+                }
+            },
+
+            /**
+             * Get the average duration of all ticks.
+             * @returns {number}
+             */
+            mean: function () {
+                return this.duration() / this.ticks.length;
+            },
+
+            /**
+             * Get the duration of all ticks.
+             * @returns {number}
+             */
+            duration: function () {
+                let sum = 0;
+                for (let i = 0, l = this.ticks.length; i &#x3c; l; i++) {
+                    sum += this.ticks[i].getDiff();
+                }
+                return sum;
+            },
+
+            /**
+             * Get the shortest tick.
+             * @returns {number}
+             */
+            min: function () {
+                let min = this.ticks[0].getDiff();
+                this.ticks.forEach(function (tick) {
+                    if (tick.getDiff() &#x3c; min) {
+                        min = tick.getDiff();
+                    }
+                });
+
+                return min;
+            },
+
+            /**
+             * Get the longest tick.
+             * @returns {number}
+             */
+            max: function () {
+                let max = 0;
+                this.ticks.forEach(function (tick) {
+                    if (tick.getDiff() &#x3e; max) {
+                        max = tick.getDiff();
+                    }
+                });
+
+                return max;
+            },
+
+            /**
+             * Get the number of ticks.
+             * @returns {Number}
+             */
+            count: function () {
+                return Object.keys(this.ticks).length;
+            },
+
+            /**
+             * Parse the numbers nicely.
+             * @param num
+             * @returns {string}
+             */
+            parse: function (num) {
+                if (num &#x3c; 1e3) {
+                    return num + &#x27;ns&#x27;;
+                } else if (num &#x3e;= 1e3 &#x26;&#x26; num &#x3c; 1e6) {
+                    return num / 1e3 + &#x27;us&#x27;;
+                } else if (num &#x3e;= 1e6 &#x26;&#x26; num &#x3c; 1e9) {
+                    return num / 1e6 + &#x27;ms&#x27;;
+                } else if (num &#x3e;= 1e9) {
+                    return num / 1e9 + &#x27;s&#x27;;
+                }
+            }
+        };
+    }
+
+    return timers[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.exectimer.Tick" id="apidoc.module.exectimer.Tick">module exectimer.Tick</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick.Tick" id="apidoc.element.exectimer.Tick.Tick">
+        function <span class="apidocSignatureSpan">exectimer.</span>Tick
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tick(name) {
+    this.name = name;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ Stops the timer of this tick.
+
+###Timers
+ Array of timers. Each timer has methods to calculate the various metrics. When a tick is created, it is pushed into the
+ timer with name that was passed to the ticker in the constructor.
+
+```
+var tick = new t.<span class="apidocCodeKeywordSpan">Tick</span>(&#x22;TIMER&#x22;);
+
+tick.start();
+// Do some processing
+tick.stop();
+
+var myTimer = t.timers.TIMER;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick.wrap" id="apidoc.element.exectimer.Tick.wrap">
+        function <span class="apidocSignatureSpan">exectimer.Tick.</span>wrap
+        <span class="apidocSignatureSpan">(name, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrap = function (name, callback) {
+    if (typeof name === &#x27;function&#x27;) {
+        callback = name;
+        name = functionName(callback);
+    }
+
+    if (name === &#x27;&#x27;) {
+        name = &#x27;anon&#x27;;
+    }
+
+    const tick = new Tick(name);
+    tick.start();
+
+    const done = function () {
+        tick.stop();
+    };
+
+    if (isGeneratorFunction(callback)) {
+        return co(callback).then(done, done);
+    } else if(isFunction(callback)) {
+        // If done is passed when the callback is declared than we assume is async
+        return callback(done);
+    } else {
+        // Otherwise just call the function and stop the tick
+        tick.stop();
+        return callback();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Wrapping generator
+```javascript
+const t = require(&#x27;exectimer&#x27;);
+const Tick = t.Tick;
+
+const promises = [];
+for(var i = 0; i &#x3c; 10; i++) {
+    const functionExecution = Tick.<span class="apidocCodeKeywordSpan">wrap</span>(function* myFunction() {
+        yield Promise.resolve(true);
+    });
+
+    promises.push(functionExecution);
+}
+
+// After all ticks are finished
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.exectimer.Tick.prototype" id="apidoc.module.exectimer.Tick.prototype">module exectimer.Tick.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick.prototype.getDiff" id="apidoc.element.exectimer.Tick.prototype.getDiff">
+        function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>getDiff
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDiff = function () {
+    if(!this.hrend) {
+        this.stop();
+    }
+
+    return this.hrend[0] * 1e9 + this.hrend[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            /**
+             * Get the median of all ticks.
+             * @returns {*}
+             */
+            median: function () {
+                if (this.ticks.length &#x3e; 1) {
+const sorted = this.ticks.slice(0).sort(function (a, b) {
+    return a &#x26;&#x26; b &#x26;&#x26; (a.<span class="apidocCodeKeywordSpan">getDiff</span>() - b.getDiff()) || 0;
+});
+
+const l = sorted.length;
+const half = Math.floor(l / 2);
+
+
+if (l % 2) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick.prototype.start" id="apidoc.element.exectimer.Tick.prototype.start">
+        function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+    this.hrstart = process.hrtime();
+    timer(this.name).ticks.push(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const t = require(&#x27;exectimer&#x27;);
+const Tick = t.Tick;
+
+for(var i = 0; i &#x3c; 10; i++) {
+    // unique contexts to avoid aliasing (#9)
+    (function () {
+        var tick = new Tick(&#x22;myFunction&#x22;);
+        tick.<span class="apidocCodeKeywordSpan">start</span>();
+
+        setTimeout(function() {
+            tick.stop();
+        }, Math.random() * 10);
+    })();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.exectimer.Tick.prototype.stop" id="apidoc.element.exectimer.Tick.prototype.stop">
+        function <span class="apidocSignatureSpan">exectimer.Tick.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+    this.hrend = process.hrtime(this.hrstart);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for(var i = 0; i &#x3c; 10; i++) {
+    // unique contexts to avoid aliasing (#9)
+    (function () {
+        var tick = new Tick(&#x22;myFunction&#x22;);
+        tick.start();
+
+        setTimeout(function() {
+            tick.<span class="apidocCodeKeywordSpan">stop</span>();
+        }, Math.random() * 10);
+    })();
+}
+
+// Display the results
+var results = t.timers.myFunction;
+setTimeout(() =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
